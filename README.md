@@ -10,11 +10,7 @@
 <div align="center">
 <table width="100%" style="border:0;background:#1a1a2e;border-radius:12px"><tr><td align="center" style="padding:32px 24px 24px">
 
-<h1>🌐 WebGuide — Комплексний Гайд з HTML & CSS</h1>
-
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](#html-блоки)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](#css--як-організовано-стилі)
-[![Responsive](https://img.shields.io/badge/RESPONSIVE-4CAF50?style=for-the-badge&logo=googlechrome&logoColor=white)](#-поради-та-фішки)
+[![JS & TS Scripts](https://img.shields.io/badge/RESPONSIVE-4CAF50?style=for-the-badge&logo=googlechrome&logoColor=white)](#-поради-та-фішки)
 [![License](https://img.shields.io/badge/LICENSE-grey?style=for-the-badge)](LICENSE)
 [![MIT](https://img.shields.io/badge/MIT-b3a696?style=for-the-badge)](#)
 
