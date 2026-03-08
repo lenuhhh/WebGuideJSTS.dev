@@ -1,6 +1,6 @@
 <div align="center">
 
-# ⚡ codecraft — JS & TS Full Course
+# ⚡ Codecraft — JS & TS Full Course
 
 <!--
   ╔══════════════════════════════════════════════════════════╗
