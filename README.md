@@ -1,3 +1,7 @@
+<div align="center">
+
+# ⚡ codecraft — JS & TS Full Course
+
 <!--
   ╔══════════════════════════════════════════════════════════╗
   ║              WEBGUIDE.DEV — BANNER HEADER                ║
@@ -16,333 +20,249 @@
 
 <br/>
 
-**Професійна документація веб-розробки з інтерактивним навігаційним меню та красивим теплим дизайном**
+<p align="center">
+  <strong>Повний інтерактивний довідник з JavaScript та TypeScript — від першої змінної до просунутих концепцій.</strong><br/>
+  <sub>A complete interactive reference for JavaScript & TypeScript — from first variable to advanced concepts.</sub>
+</p>
 
 <br/>
 
-[🌟 Основні Особливості](#-огляд-проєкту) • [🚀 Швидкий Старт](#-швидкий-старт) • [📚 Документація](#-html-блоки) • [🎨 Дизайн](#️-кольорова-палітра)
-
-</td></tr></table>
-
-<br/>
-
-| 🏗️ HTML блоків | 🎨 CSS секцій | ⚡ JS функцій | 📄 Файлів |
-|:-:|:-:|:-:|:-:|
-| **9** | **12** | **10** | **3** |
+> 📘 **20 розділів** &nbsp;·&nbsp; 💡 **100+ прикладів** &nbsp;·&nbsp; 🌍 **3 мови інтерфейсу** &nbsp;·&nbsp; 📦 **0 залежностей**
 
 </div>
 
 ---
 
-## 📋 Зміст
+## 🗺 Зміст / Table of Contents
 
-- [🌱 Огляд проєкту](#-огляд-проєкту)
-- [📁 Структура файлів](#-структура-файлів)
-- [🏗️ HTML Блоки](#️-html-блоки)
-- [🎨 CSS — як організовано стилі](#-css--як-організовано-стилі)
-- [⚡ JavaScript](#-javascript)
-- [🖌️ Кольорова палітра](#️-кольорова-палітра)
-- [💡 Поради та фішки](#-поради-та-фішки)
-- [🚀 Швидкий старт](#-швидкий-старт)
-- [📬 Контакти](#-контакти)
-
----
-
-## 🌱 Огляд проєкту
-
-**WebGuide.dev** — інтерактивна документація-гайд, яка крок за кроком показує як зібрати повноцінний лендинг з нуля. Кожен блок подається у форматі **HTML поруч із CSS** — щоб бачити зв'язок між розміткою і стилем.
-
-### Що всередині
-
-| Модуль | Опис |
-|--------|------|
-| 🏗️ **9 HTML-блоків** | Header, Hero, Features, Content, Two-Column, Cards, CTA, FAQ, Footer |
-| 🎨 **Дизайн-система** | 6 кольорів, 3 рівні шрифтів, Golden Ratio відступи |
-| ⚡ **Vanilla JS** | Без фреймворків — чистий браузерний JavaScript |
-| 📱 **Адаптивність** | `@media` breakpoints, Grid і Flex переходять в 1 колонку |
-| 📖 **Коментарі** | Кожен рядок коду пояснено прямо у файлі |
-
-> 💡 **Підхід гайду:** Спочатку структура — потім стиль. Кожна HTML-секція має свій CSS-блок поруч. Це допомагає розуміти не просто «як виглядає», а «чому виглядає саме так».
+- [✨ Про проект](#-про-проект--about)
+- [📚 Програма курсу](#-програма-курсу--curriculum)
+- [🌍 Мультимовність](#-мультимовність--multilingual)
+- [🎨 Дизайн та UX](#-дизайн-та-ux--design--ux)
+- [🚀 Швидкий старт](#-швидкий-старт--quick-start)
+- [🗂 Структура файлу](#-структура-файлу--file-structure)
+- [🛠 Технічний стек](#-технічний-стек--tech-stack)
+- [📈 Дорожня карта](#-дорожня-карта--roadmap)
+- [🤝 Внесок у проект](#-внесок-у-проект--contributing)
 
 ---
 
-## 📁 Структура файлів
+## ✨ Про проект / About
 
-<!--
-  ╔══════════════════════════════════════════╗
-  ║           СТРУКТУРА ПРОЄКТУ              ║
-  ╚══════════════════════════════════════════╝
--->
-<table width="100%" style="border:0;background:#161b22;border-radius:10px"><tr><td style="padding:20px 28px">
+**codecraft** — це самодостатній, повністю статичний HTML-довідник, який охоплює весь шлях від базових концепцій JavaScript до типізованого TypeScript.
+
+Розроблено для тих, хто:
+- 🌱 починає вивчати JavaScript з нуля
+- 🔁 хоче закріпити знання з JS перед переходом на TS
+- 🔷 освоює TypeScript: інтерфейси, дженерики, utility types
+- 📖 шукає зручний offline-довідник із підсвіткою синтаксису
 
 ```
-project/
-├── 📄 index.html       ← точка входу, весь HTML розмічений тут
-├── 🎨 styles.css       ← всі стилі, від reset до @media
-├── ⚙️  script.js        ← інтерактивність та DOM-логіка
-└── 📖 README.md        ← цей файл
-```
-
-</td></tr></table>
-
-### Як відкрити
-
-**Варіант 1 — просто в браузері:**
-```bash
-# Просто відкрий index.html у будь-якому браузері
-open index.html
-```
-
-**Варіант 2 — Live Server (рекомендовано):**
-```bash
-# Встанови розширення Live Server у VS Code
-# Правий клік на index.html → "Open with Live Server"
-# Файл автоматично оновлюється при кожному збереженні
-```
-
-**Варіант 3 — клонування репо:**
-```bash
-git clone https://github.com/webguide-dev/webguide.git
-cd webguide
-open index.html
+Жодного сервера. Жодного npm install. Просто відкрий файл у браузері.
+No server. No npm install. Just open the file in your browser.
 ```
 
 ---
 
-## 🏗️ HTML Блоки
+## 📚 Програма курсу / Curriculum
 
-Файл `index.html` розбитий на **9 семантичних секцій**. Кожна позначена коментарем для швидкого пошуку (`Ctrl+F`):
+### 📘 JavaScript
 
-```html
-<!-- ═══════════════════════════════════════
-     НАЗВА БЛОКУ
-════════════════════════════════════════ -->
-```
+| # | Розділ | Теми |
+|---|--------|------|
+| 1 | **Змінні та типи** | `var`, `let`, `const`, примітиви, `typeof` |
+| 2 | **Оператори** | Арифметика, порівняння, логічні, `??`, `?.` |
+| 3 | **Умови** | `if/else`, `switch`, тернарний оператор |
+| 4 | **Цикли** | `for`, `while`, `for..of`, `for..in` |
+| 5 | **Функції** | Декларації, стрілкові, замикання, мемоізація |
+| 6 | **Масиви** | `map`, `filter`, `reduce`, `flat`, ланцюжки методів |
+| 7 | **Об'єкти** | Методи, spread, `Object.keys/values/entries` |
+| 8 | **Деструктуризація** | Масивів та об'єктів, дефолтні значення |
+| 9 | **Spread / Rest** | `...spread`, `...rest`, клонування |
+| 10 | **Класи та ООП** | `class`, `extends`, `super`, поліморфізм |
+| 11 | **DOM** | Селектори, маніпуляції, динамічний контент |
+| 12 | **Події** | `addEventListener`, делегування, `CustomEvent` |
+| 13 | **Async/Await** | `Promise`, `async/await`, `Promise.all` |
+| 14 | **Fetch API** | GET/POST запити, обробка JSON, error handling |
+| 15 | **ES Modules** | `import/export`, іменовані та дефолтні |
+| 16 | **Помилки / try-catch** | `try/catch/finally`, власні `Error`-класи |
+| 17 | **Замикання** | Scope, IIFE, ітераційні пастки |
+| 18 | **Ітератори та генератори** | `Symbol.iterator`, `function*`, `yield` |
+| 19 | **RegExp** | Шаблони, флаги, шпаргалка символів |
+| 20 | **LocalStorage** | Зберігання, читання, видалення, JSON-серіалізація |
 
-### Перелік блоків
+### 🔷 TypeScript
 
-| # | Блок | Тег | Опис |
-|---|------|-----|------|
-| 1 | **Header / Навігація** | `<header>` | Sticky, логотип + `<nav>`, якорі до секцій |
-| 2 | **Hero секція** | `<section>` | Grid 2 колонки: текст + зображення, h1, CTA кнопки |
-| 3 | **Features картки** | `<section>` | Grid з 3 карток, іконка + заголовок + опис, hover |
-| 4 | **Content 2-Col** | `<section>` | CSS Grid: зліва зображення, справа текст зі списком |
-| 5 | **Two-Column Items** | `<section>` | Flexbox items: іконка + текст поруч |
-| 6 | **Info Cards** | `<section>` | Grid 4 картки, overlay-текст при hover |
-| 7 | **CTA секція** | `<section>` | Повноширокий блок, темний фон, велика кнопка |
-| 8 | **FAQ акордеон** | `<section>` | JS toggle, `classList.toggle('active')` |
-| 9 | **Footer** | `<footer>` | 4 колонки: лого, посилання, контакти, соцмережі |
+| # | Розділ | Теми |
+|---|--------|------|
+| 21 | **Що таке TypeScript?** | Переваги, встановлення, компіляція |
+| 22 | **Базові типи** | Примітиви, `unknown`, `never`, `any` |
+| 23 | **Інтерфейси** | `interface`, розширення, optional fields |
+| 24 | **Дженерики** | `<T>`, generic functions, generic classes |
+| 25 | **Enums** | `const enum`, числові та рядкові |
+| 26 | **Utility Types** | `Partial`, `Readonly`, `Pick`, `Omit`, `Record` |
+| 27 | **Type Narrowing** | `typeof`, `instanceof`, discriminated unions |
+| 28 | **Класи у TS** | `private`, `protected`, `readonly`, модифікатори |
 
 ---
 
-## 🎨 CSS — як організовано стилі
+## 🌍 Мультимовність / Multilingual
 
-Файл `styles.css` має чітку структуру розділів, відокремлених великими коментарями:
+Курс підтримує **три мови інтерфейсу** з миттєвим перемиканням без перезавантаження сторінки:
 
 ```
-styles.css
-├── /* РОЗДІЛ 1 */  Universal reset + body styles
-├── /* РОЗДІЛ 2 */  :root змінні (кольори, відступи, шрифти)
-├── /* РОЗДІЛ 3 */  Header + Navigation
-├── /* РОЗДІЛ 4 */  Hero секція
-├── /* РОЗДІЛ 5 */  Кнопки (.btn-primary, .btn-secondary)
-├── /* РОЗДІЛ 6 */  Features grid
-├── /* РОЗДІЛ 7 */  Content grid
-├── /* РОЗДІЛ 8 */  Cards + hover overlay
-├── /* РОЗДІЛ 9 */  @media (max-width: 768px)
-└── /* КІНЕЦЬ */    Дизайн-система — коментар-резюме
+🇺🇦 Українська (UA)  —  мова за замовчуванням
+🇷🇺 Русский    (RU)  —  повний переклад
+🇬🇧 English    (EN)  —  full translation
 ```
 
-### Дизайн-система (з кінця styles.css)
+Вибір мови зберігається у `localStorage` і відновлюється при наступному відкритті.
+
+Переклади реалізовані через об'єкт `TRANSLATIONS` — понад **150 ключів**, включаючи заголовки, підказки, коментарі у коді та підписи таблиць.
+
+---
+
+## 🎨 Дизайн та UX / Design & UX
+
+Інтерфейс побудований у **теплій earth-tone палітрі** з акцентом на читабельність і фокус:
 
 ```css
-/* КОЛІРНА ПАЛІТРА (6 основних кольорів):
-┌─ Фон:           #f9fafb  (дуже світло-сірий)
-├─ Карточки:      #ffffff  (чистий білий)
-├─ Первинний:     #3b82f6  (яскравий синій для акцентів)
-├─ Темний текст:  #1f2937  (для заголовків)
-├─ Світлий текст: #6b7280  (для описів)
-└─ Межі:          #e5e7eb  (ледве видні лінії)
-
-ТИПОГРАФІЯ (3 рівні):
-┌─ Заголовки: 48px → 36px → 20px → 16px
-├─ Основний текст: 16px, line-height: 1.6
-└─ Малий текст: 14px для деталей
-
-МАКЕТ:
-┌─ max-width: 1200px, центрований
-├─ Вертикальний padding: 80px
-└─ Gap: 60px (великий) / 30px (малий) / 20px (компактний) */
+--bg:      #f4eeeb   /* теплий кремовий фон        */
+--accent:  #292e1e   /* темно-оливковий акцент      */
+--green:   #3d4a2a   /* підказки та успіх           */
+--red:     #8a5a4a   /* попередження та помилки     */
 ```
 
-> 🔍 **Порада:** Всі кольори і відступи в `:root {}` у верхній частині файлу. Змінюй там — зміни підхоплять всі елементи одразу.
+### Ключові UI-рішення
+
+- 📌 **Sticky-сайдбар** з автоматичною підсвіткою активного розділу (IntersectionObserver)
+- 📋 **Кнопка "Копіювати"** у кожному блоці коду з мовним текстом
+- 🃏 **Card Grid** — картки концепцій та порівняльні блоки JS vs TS
+- 📊 **Progress Steps** — відображення прогресу вивчення курсу
+- 💬 **Callout-блоки** — поради (tip), попередження (warn), результати (result)
+- 🔤 **JetBrains Mono** для коду, **Lora** для заголовків, **DM Sans** для тексту
+- 📱 **Адаптивна верстка** із медіа-запитами для мобільних пристроїв
 
 ---
 
-## ⚡ JavaScript
+## 🚀 Швидкий старт / Quick Start
 
-Всі скрипти у `script.js` розбиті на іменовані функції. Жодних зовнішніх бібліотек — тільки чистий браузерний JS.
+### Варіант 1 — просто відкрий
 
-| Функція | Метод | Опис |
-|---------|-------|------|
-| 📜 **Sticky header** | `window.addEventListener('scroll')` | Додає клас `.scrolled` після 50px прокрутки |
-| 🍔 **Mobile burger** | `classList.toggle('open')` | Відкриває мобільне меню з CSS анімацією |
-| ❓ **FAQ акордеон** | `querySelectorAll` + `forEach` | Клік закриває інші, відкриває поточний |
-| 🎞️ **Scroll анімації** | `IntersectionObserver` | Додає `.visible` коли елемент з'являється |
-| 🔢 **Лічильники** | `requestAnimationFrame` | Числа зростають від 0 до цільового значення |
+```bash
+# Клонуй репозиторій
+git clone https://github.com/your-username/codecraft-js-ts.git
 
-```javascript
-// Приклад: IntersectionObserver для анімацій
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
+# Відкрий у браузері
+open js-ts-course-multilang.html
+# або просто двічі клікни на файл
+```
 
-document.querySelectorAll('.animate').forEach(el => observer.observe(el));
+### Варіант 2 — локальний сервер (опційно)
+
+```bash
+# Python
+python -m http.server 8080
+
+# Node.js
+npx serve .
+
+# Потім відкрий: http://localhost:8080
+```
+
+> ⚡ **Увага:** файл повністю самодостатній. Усі шрифти підвантажуються з Google Fonts — потрібне інтернет-з'єднання для першого завантаження.
+
+---
+
+## 🗂 Структура файлу / File Structure
+
+Весь курс — **один HTML-файл** із чіткою внутрішньою організацією:
+
+```
+js-ts-course-multilang.html
+│
+├── <head>
+│   ├── Google Fonts (DM Sans, JetBrains Mono, Lora)
+│   └── <style> — повна CSS-система (змінні, компоненти, адаптив)
+│
+├── <body>
+│   ├── <header>        — логотип, навігація, мовний switcher
+│   ├── <aside.sidebar> — дерево розділів із IntersectionObserver
+│   └── <main>
+│       ├── .page-hero  — заголовок, бейджі, progress steps
+│       ├── .toc        — зміст з якорями
+│       └── .doc-section × 28  — розділи курсу
+│
+└── <script>
+    ├── TRANSLATIONS{}  — об'єкт i18n (150+ ключів × 3 мови)
+    ├── setLang()       — перемикач мови + збереження у localStorage
+    ├── copyCode()      — копіювання коду в буфер обміну
+    └── IntersectionObserver — активна підсвітка навігації
 ```
 
 ---
 
-## 🖌️ Кольорова палітра
+## 🛠 Технічний стек / Tech Stack
 
-<!--
-  ╔══════════════════════════════════════════╗
-  ║           КОЛЬОРОВА ПАЛІТРА              ║
-  ╚══════════════════════════════════════════╝
--->
-<div align="center">
-<table style="border:0;border-collapse:separate;border-spacing:8px">
-<tr>
-  <td align="center" style="background:#f4eeeb;padding:16px 20px;border-radius:10px;border:1px solid #ccc0b0;min-width:130px">
-    <b style="color:#292e1e">Isabelline</b><br/><code>#F4EEEB</code><br/><sub>Основний фон</sub>
-  </td>
-  <td align="center" style="background:#ede3d6;padding:16px 20px;border-radius:10px;border:1px solid #ccc0b0;min-width:130px">
-    <b style="color:#292e1e">Southern Sand</b><br/><code>#EDE3D6</code><br/><sub>Поверхні, карточки</sub>
-  </td>
-  <td align="center" style="background:#b3a696;padding:16px 20px;border-radius:10px;border:1px solid #9a8d80;min-width:130px">
-    <b style="color:#292e1e">Taupe</b><br/><code>#B3A696</code><br/><sub>Хедери коду</sub>
-  </td>
-  <td align="center" style="background:#7a6b5e;padding:16px 20px;border-radius:10px;min-width:130px">
-    <b style="color:#f4eeeb">Vintage Coin</b><br/><code style="color:#f4eeeb">#7A6B5E</code><br/><sub style="color:#ddd">Приглушений текст</sub>
-  </td>
-  <td align="center" style="background:#292e1e;padding:16px 20px;border-radius:10px;min-width:130px">
-    <b style="color:#f4eeeb">Pine Tree</b><br/><code style="color:#b3a696">#292E1E</code><br/><sub style="color:#b3a696">Текст, акценти</sub>
-  </td>
-</tr>
-</table>
-</div>
-
-<br/>
-
----
-
-## 💡 Поради та фішки
-
-### Навігація по файлу
-- **`Ctrl+F`** у браузері — шукай будь-яке слово. Гайд побудований так, щоб пошук одразу знаходив потрібний блок
-- Кожна секція має `id` — посилання `href="#section"` плавно прокручують до неї
-- Великі коментарі `═══` видно навіть при швидкому скролі коду
-
-### Розробка
-- **`F12`** → DevTools — бачиш CSS будь-якого елемента і тестуєш зміни в реальному часі
-- Кнопка **`copy`** на кожному блоці коду — один клік, і код у буфері обміну
-- Стискай вікно до `768px` щоб перевірити мобільну версію
-
-### Кастомізація
-```css
-/* Змінюй кольори в одному місці — :root у styles.css */
-:root {
-  --primary-color: #3b82f6;   /* ← один рядок змінює весь акцент */
-  --font-size-base: 16px;
-  --border-radius: 12px;
-}
-```
-
-### Корисні розширення VS Code
-| Розширення | Що робить |
+| Категорія | Технологія |
 |-----------|-----------|
-| **Live Server** | Авто-перезавантаження при збереженні |
-| **Prettier** | Форматування коду |
-| **Auto Rename Tag** | Перейменовує парний тег автоматично |
-| **Color Highlight** | Показує кольори прямо в коді |
-| **CSS Peek** | Переходить до CSS класу по `Ctrl+Click` |
+| Розмітка | HTML5 Semantic |
+| Стилізація | CSS Custom Properties, Grid, Flexbox |
+| Логіка | Vanilla JavaScript (ES2024) |
+| Шрифти | Google Fonts CDN |
+| i18n | Custom JS TRANSLATIONS object |
+| Зберігання | Web localStorage API |
+| Анімації | CSS transitions + IntersectionObserver API |
+| Залежності | **0** (нуль зовнішніх бібліотек) |
 
 ---
 
-## 🚀 Швидкий старт
+## 📈 Дорожня карта / Roadmap
+
+- [x] JavaScript — повний базовий курс (20 розділів)
+- [x] TypeScript — основні концепції (8 розділів)
+- [x] Мультимовність (UA / RU / EN)
+- [x] Підсвітка синтаксису (ручна токенізація)
+- [x] Адаптивний дизайн
+- [ ] 🔲 Режим темної теми
+- [ ] 🔲 Пошук по курсу
+- [ ] 🔲 Інтерактивний пісочниця (live code editor)
+- [ ] 🔲 Тести та квізи після кожного розділу
+- [ ] 🔲 Прогрес вивчення (LocalStorage-based)
+- [ ] 🔲 Node.js розділ
+- [ ] 🔲 React + TS розділ
+
+---
+
+## 🤝 Внесок у проект / Contributing
+
+Будь-які пропозиції, виправлення та покращення вітаються!
 
 ```bash
-# 1. Клонуй репозиторій
-git clone https://github.com/webguide-dev/webguide.git
+# 1. Fork репозиторію
+# 2. Створи гілку
+git checkout -b feature/new-section
 
-# 2. Перейди в папку
-cd webguide
+# 3. Внеси зміни та закомітуй
+git commit -m "feat: add Node.js section"
 
-# 3. Відкрий у VS Code
-code .
-
-# 4. Запусти Live Server або просто відкрий index.html
+# 4. Відкрий Pull Request
 ```
 
-**Або завантаж ZIP** → розпакуй → відкрий `index.html` у браузері. Готово ✅
+**Хочеш додати переклад іншою мовою?** Просто розшир об'єкт `TRANSLATIONS` у кінці файлу та додай кнопку в `.lang-switcher` — архітектура це підтримує.
 
 ---
 
-## 📬 Контакти
-
-Є питання по коду, знайшов помилку або хочеш запропонувати вдосконалення?
-
-<!--
-  ╔══════════════════════════════════════════╗
-  ║               КОНТАКТИ                   ║
-  ╚══════════════════════════════════════════╝
--->
 <div align="center">
-<table style="border:0;border-collapse:separate;border-spacing:10px">
-<tr>
-  <td align="center" style="background:#f4eeeb;padding:14px 22px;border-radius:10px;border:1px solid #b3a696">
-    <a href="mailto:hello@webguide.dev">✉️ <b>Email</b></a><br/><sub>hello@webguide.dev</sub>
-  </td>
-  <td align="center" style="background:#f4eeeb;padding:14px 22px;border-radius:10px;border:1px solid #b3a696">
-    <a href="https://github.com/webguide-dev">🐙 <b>GitHub</b></a><br/><sub>@webguide-dev</sub>
-  </td>
-  <td align="center" style="background:#f4eeeb;padding:14px 22px;border-radius:10px;border:1px solid #b3a696">
-    <a href="https://t.me/webguide_dev">✈️ <b>Telegram</b></a><br/><sub>@webguide_dev</sub>
-  </td>
-  <td align="center" style="background:#f4eeeb;padding:14px 22px;border-radius:10px;border:1px solid #b3a696">
-    <a href="https://instagram.com/webguide.dev">📸 <b>Instagram</b></a><br/><sub>@webguide.dev</sub>
-  </td>
-</tr>
-</table>
-</div>
 
----
+**Зроблено з ❤️ для розробників-початківців**
 
-<!--
-  ╔══════════════════════════════════════════╗
-  ║                 FOOTER                   ║
-  ╚══════════════════════════════════════════╝
--->
-<div align="center">
-<table width="100%" style="border:0;background:#292e1e;border-radius:12px"><tr><td align="center" style="padding:28px 24px">
-
-### 🌿 Якщо гайд був корисний — постав ⭐ на GitHub
-
-*Це допомагає проєкту розвиватись і публікувати нові матеріали*
+*Від `console.log("hello")` до `interface<T extends Record<string, unknown>>`*
 
 <br/>
 
-[![⭐ Star on GitHub](https://img.shields.io/badge/⭐_Star_on_GitHub-292e1e?style=for-the-badge&logo=github&logoColor=b3a696&labelColor=3d4a2a)](https://github.com/webguide-dev/webguide)
-[![🍴 Fork](https://img.shields.io/badge/🍴_Fork-292e1e?style=for-the-badge&logo=github&logoColor=b3a696&labelColor=3d4a2a)](https://github.com/webguide-dev/webguide/fork)
+[![JavaScript](https://img.shields.io/badge/-JavaScript-f7df1e?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/docs/Web/JavaScript)
+[![TypeScript](https://img.shields.io/badge/-TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-<br/>
-
-**WebGuide.dev** · HTML · CSS · JavaScript · © 2026
-
-`README · Isabelline Edition · v1.0`
-
-</td></tr></table>
 </div>
