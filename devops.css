@@ -89,7 +89,7 @@ a:hover { text-decoration: underline; color: var(--accent2); }
 }
 
 /* ── MAIN ─────────────────────────────────────────────── */
-.main { flex: 1; min-width: 0; padding: 48px 60px; max-width: 920px; }
+.main { flex: 1; min-width: 0; padding: 48px 40px; max-width: 100%; }
 
 /* ── PAGE HERO ───────────────────────────────────────── */
 .page-hero {
@@ -202,6 +202,7 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 44px 0; 
   border-radius: 12px; overflow: hidden;
   border: 1px solid #b3a696;
   box-shadow: 0 2px 12px rgba(41,46,30,0.08);
+  max-width: 100%;
 }
 .code-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -223,13 +224,16 @@ hr.divider { border: none; border-top: 1px solid var(--border); margin: 44px 0; 
 }
 .copy-btn:hover { background: #292e1e; color: #f4eeeb; }
 pre {
-  background: #e8e0d4; padding: 22px;
-  overflow-x: auto; margin: 0;
+  background: #e8e0d4; padding: 18px;
+  overflow-x: visible; margin: 0;
   scrollbar-width: thin; scrollbar-color: #b3a696 transparent;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
 }
 pre code {
-  font-family: 'JetBrains Mono', monospace; font-size: 13px;
-  line-height: 1.82; color: #3a3228;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  line-height: 1.7; color: #3a3228;
 }
 .t-tag  { color: #7a4e32; }
 .t-attr { color: #5a6a3a; }
@@ -318,7 +322,7 @@ td:first-child {
   padding: 28px 60px; font-size: 13px; color: var(--muted);
 }
 .footer-inner {
-  max-width: 920px; display: flex;
+  max-width: 100%; display: flex;
   justify-content: space-between; align-items: center;
   flex-wrap: wrap; gap: 10px;
 }
@@ -333,7 +337,7 @@ td:first-child {
 /* ── RESPONSIVE ──────────────────────────────────────── */
 @media (max-width: 900px) {
   .sidebar { display: none; }
-  .main { padding: 28px 20px; }
+  .main { padding: 28px 16px; }
   .header-nav { display: none; }
   .site-footer { padding: 20px; }
 }
