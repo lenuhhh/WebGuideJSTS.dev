@@ -6,6 +6,7 @@
 <title id="page-title">JS &amp; TS — Повний курс</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="/devops.css">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&family=Lora:wght@400;600;700&display=swap" rel="stylesheet" />
 </head>
@@ -35,6 +36,14 @@
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
+  <div class="sb-group">
+    <div class="sb-title">🚀 <span data-i18n="sb.intro_group">Вступ</span></div>
+    <ul class="sb-links">
+      <li><a href="#what-is-js" data-i18n="sb.what_is_js">Що таке JavaScript?</a></li>
+      <li><a href="#what-is-ts" data-i18n="sb.what_is_ts">Що таке TypeScript?</a></li>
+      <li><a href="#js-vs-ts" data-i18n="sb.js_vs_ts">JS vs TS</a></li>
+    </ul>
+  </div>
   <div class="sb-group">
     <div class="sb-title">📘 JavaScript</div>
     <ul class="sb-links">
@@ -104,6 +113,9 @@
   <div class="toc">
     <div class="toc-title">📋 <span data-i18n="toc.title">Зміст курсу</span></div>
     <ol>
+      <li><a href="#what-is-js"><span data-i18n="toc.what_is_js">Що таке JavaScript?</span></a></li>
+      <li><a href="#what-is-ts"><span data-i18n="toc.what_is_ts">Що таке TypeScript?</span></a></li>
+      <li><a href="#js-vs-ts"><span data-i18n="toc.js_vs_ts">JS vs TS — порівняння та спільне</span></a></li>
       <li><a href="#basics"><span data-i18n="toc.basics">Змінні та типи даних</span></a></li>
       <li><a href="#operators"><span data-i18n="toc.operators">Оператори</span></a></li>
       <li><a href="#conditions"><span data-i18n="toc.conditions">Умови (if/else, switch, тернарний)</span></a></li>
@@ -128,6 +140,304 @@
     </ol>
   </div>
 
+  <!-- ===== 0a. ЩО ТАКЕ JAVASCRIPT ===== -->
+  <section class="doc-section" id="what-is-js">
+    <h2><span class="step-number">🌐</span> <span data-i18n="h2.what_is_js">Що таке JavaScript?</span></h2>
+    <p class="section-intro" data-i18n="intro.what_is_js">JavaScript — це мова програмування, яка «оживляє» вебсторінки. Саме JS відповідає за кнопки, анімації, форми, запити до серверів — усе динамічне у браузері.</p>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="ic-icon">🌍</div>
+        <div class="ic-title" data-i18n="jscard.web">Мова вебу</div>
+        <div class="ic-desc" data-i18n="jscard.web_desc">Єдина мова, яку «розуміє» браузер нативно. Без плагінів і компіляції — просто файл .js.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">⚡</div>
+        <div class="ic-title" data-i18n="jscard.dynamic">Динамічна типізація</div>
+        <div class="ic-desc" data-i18n="jscard.dynamic_desc">Змінна не має фіксованого типу — одна і та ж змінна може спочатку бути числом, потім рядком.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🖥️</div>
+        <div class="ic-title" data-i18n="jscard.everywhere">Скрізь</div>
+        <div class="ic-desc" data-i18n="jscard.everywhere_desc">Фронтенд (браузер), бекенд (Node.js), мобільні застосунки (React Native), десктоп (Electron).</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📅</div>
+        <div class="ic-title" data-i18n="jscard.history">Створено у 1995</div>
+        <div class="ic-desc" data-i18n="jscard.history_desc">Брендан Айк написав перший прототип за 10 днів. Сьогодні JS — найпопулярніша мова у світі за даними GitHub.</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <span class="icon">💡</span>
+      <p data-i18n="callout.js_metaphor"><strong>Аналогія:</strong> якщо HTML — це кістяк сторінки, CSS — її зовнішній вигляд, то JavaScript — це м'язи, які дозволяють їй рухатися та реагувати на дії користувача.</p>
+    </div>
+
+    <h3 data-i18n="h3.js_where_runs">Де виконується JavaScript?</h3>
+    <div class="compare-grid">
+      <div class="compare-col js-col">
+        <div class="compare-title" data-i18n="compare.browser">🌐 У браузері</div>
+        <div class="code-block" style="border-radius:0 0 10px 10px">
+          <pre><code><span class="t-comm lang-uk">// Змінює вміст сторінки прямо зараз</span><span class="t-comm lang-ru" style="display:none">// Меняет содержимое страницы прямо сейчас</span><span class="t-comm lang-en" style="display:none">// Changes page content right now</span>
+document.<span class="t-fn">getElementById</span>(<span class="t-str">"title"</span>).<span class="t-attr">textContent</span>
+  = <span class="t-str lang-uk">"Привіт, JavaScript!"</span><span class="t-str lang-ru" style="display:none">"Привет, JavaScript!"</span><span class="t-str lang-en" style="display:none">"Hello, JavaScript!"</span>;
+
+<span class="t-comm lang-uk">// Реакція на клік</span><span class="t-comm lang-ru" style="display:none">// Реакция на клик</span><span class="t-comm lang-en" style="display:none">// Reacting to a click</span>
+document.<span class="t-fn">querySelector</span>(<span class="t-str">"button"</span>)
+  .<span class="t-fn">addEventListener</span>(<span class="t-str">"click"</span>, () => {
+    alert(<span class="t-str lang-uk">"Кнопку натиснуто!"</span><span class="t-str lang-ru" style="display:none">"Кнопка нажата!"</span><span class="t-str lang-en" style="display:none">"Button clicked!"</span>);
+  });</code></pre>
+        </div>
+      </div>
+      <div class="compare-col ts-col">
+        <div class="compare-title" data-i18n="compare.nodejs">🖥️ На сервері (Node.js)</div>
+        <div class="code-block" style="border-radius:0 0 10px 10px">
+          <pre><code><span class="t-comm lang-uk">// Читає файл з диска</span><span class="t-comm lang-ru" style="display:none">// Читает файл с диска</span><span class="t-comm lang-en" style="display:none">// Reads a file from disk</span>
+<span class="t-kw">const</span> <span class="t-var">fs</span> = <span class="t-fn">require</span>(<span class="t-str">"fs"</span>);
+<span class="t-var">fs</span>.<span class="t-fn">readFile</span>(<span class="t-str">"data.txt"</span>, <span class="t-str">"utf8"</span>,
+  (<span class="t-var">err</span>, <span class="t-var">data</span>) => {
+    console.<span class="t-fn">log</span>(<span class="t-var">data</span>);
+  }
+);
+
+<span class="t-comm lang-uk">// HTTP-сервер за 5 рядків</span><span class="t-comm lang-ru" style="display:none">// HTTP-сервер за 5 строк</span><span class="t-comm lang-en" style="display:none">// HTTP server in 5 lines</span>
+<span class="t-kw">const</span> <span class="t-var">http</span> = <span class="t-fn">require</span>(<span class="t-str">"http"</span>);
+<span class="t-var">http</span>.<span class="t-fn">createServer</span>((<span class="t-var">req</span>, <span class="t-var">res</span>) => {
+  <span class="t-var">res</span>.<span class="t-fn">end</span>(<span class="t-str lang-uk">"Привіт від Node!"</span><span class="t-str lang-ru" style="display:none">"Привет от Node!"</span><span class="t-str lang-en" style="display:none">"Hello from Node!"</span>);
+}).<span class="t-fn">listen</span>(<span class="t-num">3000</span>);</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <h3 data-i18n="h3.js_how_works">Як працює JS у браузері?</h3>
+    <ul class="step-list">
+      <li><span class="num">1.</span><span data-i18n="step.js1">Браузер завантажує HTML і знаходить тег <code>&lt;script&gt;</code> або підключений файл <code>.js</code>.</span></li>
+      <li><span class="num">2.</span><span data-i18n="step.js2">JS-рушій (V8 у Chrome, SpiderMonkey у Firefox) читає і виконує код рядок за рядком.</span></li>
+      <li><span class="num">3.</span><span data-i18n="step.js3">Код може звертатися до DOM (структури сторінки) і змінювати її в реальному часі.</span></li>
+      <li><span class="num">4.</span><span data-i18n="step.js4">Асинхронні операції (запити, таймери) виконуються у фоні, не блокуючи інтерфейс.</span></li>
+    </ul>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ===== 0b. ЩО ТАКЕ TYPESCRIPT ===== -->
+  <section class="doc-section" id="what-is-ts">
+    <h2><span class="step-number">🔷</span> <span data-i18n="h2.what_is_ts">Що таке TypeScript?</span></h2>
+    <p class="section-intro" data-i18n="intro.what_is_ts_intro">TypeScript — це JavaScript із «надбудовою» у вигляді системи типів. Його створила Microsoft у 2012 році, щоб зробити великі JS-проекти надійнішими та зручнішими для роботи в команді.</p>
+
+    <div class="callout info">
+      <span class="icon">🎯</span>
+      <p data-i18n="callout.ts_key_idea"><strong>Головна ідея:</strong> TypeScript — це <em>надмножина</em> JavaScript. Будь-який валідний JS-код є також валідним TS-кодом. Але TS дозволяє <em>додатково</em> вказувати типи для змінних, параметрів функцій та повернених значень.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="info-card">
+        <div class="ic-icon">🛡️</div>
+        <div class="ic-title" data-i18n="tscard.safety">Безпека типів</div>
+        <div class="ic-desc" data-i18n="tscard.safety_desc">TS ловить помилки ще до запуску коду — прямо під час написання в редакторі.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🧠</div>
+        <div class="ic-title" data-i18n="tscard.intellisense">Розумне автодоповнення</div>
+        <div class="ic-desc" data-i18n="tscard.intellisense_desc">IDE «знає» які поля є у об'єкта і які методи можна викликати — підказки стають точнішими.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">📖</div>
+        <div class="ic-title" data-i18n="tscard.docs">Типи як документація</div>
+        <div class="ic-desc" data-i18n="tscard.docs_desc">Сигнатура функції <code>greet(name: string): string</code> одразу показує що приймає і повертає.</div>
+      </div>
+      <div class="info-card">
+        <div class="ic-icon">🔄</div>
+        <div class="ic-title" data-i18n="tscard.compiles">Компілюється в JS</div>
+        <div class="ic-desc" data-i18n="tscard.compiles_desc">Браузер не розуміє TS — тому він компілюється у звичайний JS за допомогою команди <code>tsc</code>.</div>
+      </div>
+    </div>
+
+    <h3 data-i18n="h3.ts_vs_js_code">JS vs TS — один і той же код</h3>
+    <div class="compare-grid">
+      <div class="compare-col js-col">
+        <div class="compare-title">JavaScript</div>
+        <div class="code-block" style="border-radius:0 0 10px 10px">
+          <div class="code-header"><span class="code-lang js">JS</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
+          <pre><code><span class="t-comm lang-uk">// JS — немає підказок про типи</span><span class="t-comm lang-ru" style="display:none">// JS — нет подсказок о типах</span><span class="t-comm lang-en" style="display:none">// JS — no type hints</span>
+<span class="t-kw">function</span> <span class="t-fn">greet</span>(<span class="t-var">name</span>) {
+  <span class="t-kw">return</span> <span class="t-str">"Hello, "</span> + <span class="t-var">name</span>;
+}
+
+<span class="t-fn">greet</span>(<span class="t-num">42</span>);
+<span class="t-comm lang-uk">// ✅ JS не заперечує... але результат</span><span class="t-comm lang-ru" style="display:none">// ✅ JS не возражает... но результат</span><span class="t-comm lang-en" style="display:none">// ✅ JS won't complain... but result</span>
+<span class="t-comm lang-uk">// → "Hello, 42" — логічна помилка!</span><span class="t-comm lang-ru" style="display:none">// → "Hello, 42" — логическая ошибка!</span><span class="t-comm lang-en" style="display:none">// → "Hello, 42" — logical bug!</span>
+
+<span class="t-comm lang-uk">// Ще небезпечніше:</span><span class="t-comm lang-ru" style="display:none">// Ещё опаснее:</span><span class="t-comm lang-en" style="display:none">// Even more dangerous:</span>
+<span class="t-kw">function</span> <span class="t-fn">getAge</span>(<span class="t-var">user</span>) {
+  <span class="t-kw">return</span> <span class="t-var">user</span>.<span class="t-attr">age</span>; <span class="t-comm lang-uk">// а є там age?</span><span class="t-comm lang-ru" style="display:none">// а есть ли там age?</span><span class="t-comm lang-en" style="display:none">// is .age even there?</span>
+}</code></pre>
+        </div>
+      </div>
+      <div class="compare-col ts-col">
+        <div class="compare-title">TypeScript</div>
+        <div class="code-block" style="border-radius:0 0 10px 10px">
+          <div class="code-header"><span class="code-lang js">TS</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
+          <pre><code><span class="t-comm lang-uk">// TS — типи описані явно</span><span class="t-comm lang-ru" style="display:none">// TS — типы описаны явно</span><span class="t-comm lang-en" style="display:none">// TS — types described explicitly</span>
+<span class="t-kw">function</span> <span class="t-fn">greet</span>(<span class="t-var">name</span>: <span class="t-attr">string</span>): <span class="t-attr">string</span> {
+  <span class="t-kw">return</span> <span class="t-str">"Hello, "</span> + <span class="t-var">name</span>;
+}
+
+<span class="t-fn">greet</span>(<span class="t-num">42</span>);
+<span class="t-comm lang-uk">// ❌ Помилка компіляції одразу!</span><span class="t-comm lang-ru" style="display:none">// ❌ Ошибка компиляции сразу!</span><span class="t-comm lang-en" style="display:none">// ❌ Compile error immediately!</span>
+<span class="t-comm">// Argument of type 'number' is not</span>
+<span class="t-comm">// assignable to parameter of type 'string'</span>
+
+<span class="t-kw">interface</span> <span class="t-fn">User</span> { <span class="t-attr">age</span>: <span class="t-attr">number</span> }
+<span class="t-kw">function</span> <span class="t-fn">getAge</span>(<span class="t-var">user</span>: <span class="t-fn">User</span>): <span class="t-attr">number</span> {
+  <span class="t-kw">return</span> <span class="t-var">user</span>.<span class="t-attr">age</span>; <span class="t-comm lang-uk">// ✅ точно є!</span><span class="t-comm lang-ru" style="display:none">// ✅ точно есть!</span><span class="t-comm lang-en" style="display:none">// ✅ guaranteed!</span>
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="icon">⚠️</span>
+      <p data-i18n="callout.ts_when"><strong data-i18n="callout.ts_when_title">Коли вибирати TS?</strong> <span data-i18n="callout.ts_when_desc">Для маленьких скриптів достатньо JS. TypeScript особливо корисний у великих проектах, командній розробці або бібліотеках — скрізь, де важлива надійність і авто-документація коду.</span></p>
+    </div>
+
+    <div class="callout info">
+      <span class="icon">📦</span>
+      <p data-i18n="callout.ts_install"><strong>Встановлення:</strong> <code>npm install -g typescript</code> → компілювати: <code>tsc файл.ts</code>. Або використовуй ts-node / Vite / Next.js з вбудованою підтримкою TS.</p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ===== 0c. JS vs TS — ПОРІВНЯННЯ ===== -->
+  <section class="doc-section" id="js-vs-ts">
+    <h2><span class="step-number">⚖️</span> <span data-i18n="h2.js_vs_ts">JS vs TS — спільне та відмінності</span></h2>
+    <p class="section-intro" data-i18n="intro.js_vs_ts">Розуміння різниці між JavaScript та TypeScript — ключ до правильного вибору інструменту. Розберемо спільне, відмінності, і як вони взаємодіють на прикладі масивів.</p>
+
+    <h3 data-i18n="h3.common_ground">Спільне між JS та TS</h3>
+    <div class="concept-grid">
+      <div class="concept-card">
+        <div class="cc-tag" data-i18n="tag.syntax">Синтаксис</div>
+        <div class="cc-title" data-i18n="concept.same_syntax">Однаковий синтаксис</div>
+        <div class="cc-desc" data-i18n="concept.same_syntax_desc">Цикли, умови, функції, класи, async/await — все виглядає однаково. Вивчивши JS, TS не злякає.</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-tag" data-i18n="tag.runtime">Runtime</div>
+        <div class="cc-title" data-i18n="concept.same_runtime">Один і той же рушій</div>
+        <div class="cc-desc" data-i18n="concept.same_runtime_desc">TS компілюється у JS і запускається тим самим рушієм (V8, Node.js). У production — тільки JS.</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-tag" data-i18n="tag.ecosystem">Екосистема</div>
+        <div class="cc-title" data-i18n="concept.same_eco">Спільна екосистема</div>
+        <div class="cc-desc" data-i18n="concept.same_eco_desc">npm-пакети, React, Node.js, Vite — все це доступно і в JS, і в TS. Бібліотеки одні й ті самі.</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-tag" data-i18n="tag.methods">Методи</div>
+        <div class="cc-title" data-i18n="concept.same_methods">Ті самі методи масивів і об'єктів</div>
+        <div class="cc-desc" data-i18n="concept.same_methods_desc"><code>map</code>, <code>filter</code>, <code>reduce</code>, <code>forEach</code> — всі JS-методи доступні в TS без змін.</div>
+      </div>
+    </div>
+
+    <h3 data-i18n="h3.arrays_compare">Масиви: JS vs TS — схожість і відмінності</h3>
+    <div class="callout info">
+      <span class="icon">📚</span>
+      <p data-i18n="callout.arrays_theory"><strong data-i18n="callout.arrays_theory_title">Що таке масив?</strong> <span data-i18n="callout.arrays_theory_desc">Масив — це впорядкований список значень, де кожен елемент має числовий індекс, починаючи з 0. Це як пронумерована полиця: полиця 0 — перша книга, полиця 1 — друга, і так далі.</span></p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-col js-col">
+        <div class="compare-title" data-i18n="compare.js_arrays">JS Масиви — гнучкі, але ризиковані</div>
+        <div class="code-block" style="border-radius:0 0 10px 10px">
+          <div class="code-header"><span class="code-lang js">JS</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
+          <pre><code><span class="t-comm lang-uk">// Масив може містити будь-що — без обмежень</span><span class="t-comm lang-ru" style="display:none">// Массив может содержать что угодно — без ограничений</span><span class="t-comm lang-en" style="display:none">// Array can hold anything — no restrictions</span>
+<span class="t-kw">const</span> <span class="t-var">mixed</span> = [<span class="t-num">1</span>, <span class="t-str">"два"</span>, <span class="t-kw">true</span>, <span class="t-kw">null</span>];
+
+<span class="t-comm lang-uk">// Масив чисел (але JS не знає про це)</span><span class="t-comm lang-ru" style="display:none">// Массив чисел (но JS не знает об этом)</span><span class="t-comm lang-en" style="display:none">// Array of numbers (but JS doesn't know)</span>
+<span class="t-kw">const</span> <span class="t-var">scores</span> = [<span class="t-num">10</span>, <span class="t-num">20</span>, <span class="t-num">30</span>];
+<span class="t-var">scores</span>.<span class="t-fn">push</span>(<span class="t-str">"сорок"</span>); <span class="t-comm lang-uk">// ✅ JS дозволяє!</span><span class="t-comm lang-ru" style="display:none">// ✅ JS разрешает!</span><span class="t-comm lang-en" style="display:none">// ✅ JS allows it!</span>
+<span class="t-comm lang-uk">// Тепер: [10, 20, 30, "сорок"] — небезпечно</span><span class="t-comm lang-ru" style="display:none">// Теперь: [10, 20, 30, "сорок"] — опасно</span><span class="t-comm lang-en" style="display:none">// Now: [10, 20, 30, "forty"] — dangerous</span>
+
+<span class="t-comm lang-uk">// Всі методи однакові:</span><span class="t-comm lang-ru" style="display:none">// Все методы одинаковые:</span><span class="t-comm lang-en" style="display:none">// All methods are the same:</span>
+<span class="t-var">scores</span>.<span class="t-fn">map</span>(<span class="t-var">n</span> => <span class="t-var">n</span> * <span class="t-num">2</span>);
+<span class="t-var">scores</span>.<span class="t-fn">filter</span>(<span class="t-var">n</span> => <span class="t-var">n</span> > <span class="t-num">15</span>);</code></pre>
+        </div>
+      </div>
+      <div class="compare-col ts-col">
+        <div class="compare-title" data-i18n="compare.ts_arrays">TS Масиви — типізовані та безпечні</div>
+        <div class="code-block" style="border-radius:0 0 10px 10px">
+          <div class="code-header"><span class="code-lang js">TS</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
+          <pre><code><span class="t-comm lang-uk">// Масив будь-чого (аналог JS)</span><span class="t-comm lang-ru" style="display:none">// Массив чего угодно (аналог JS)</span><span class="t-comm lang-en" style="display:none">// Array of anything (like JS)</span>
+<span class="t-kw">const</span> <span class="t-var">mixed</span>: <span class="t-attr">any</span>[] = [<span class="t-num">1</span>, <span class="t-str">"два"</span>, <span class="t-kw">true</span>];
+
+<span class="t-comm lang-uk">// Масив лише чисел — тип вказано явно</span><span class="t-comm lang-ru" style="display:none">// Массив только чисел — тип указан явно</span><span class="t-comm lang-en" style="display:none">// Array of numbers only — type declared</span>
+<span class="t-kw">const</span> <span class="t-var">scores</span>: <span class="t-attr">number</span>[] = [<span class="t-num">10</span>, <span class="t-num">20</span>, <span class="t-num">30</span>];
+<span class="t-var">scores</span>.<span class="t-fn">push</span>(<span class="t-str">"сорок"</span>);
+<span class="t-comm lang-uk">// ❌ Помилка: string не є number</span><span class="t-comm lang-ru" style="display:none">// ❌ Ошибка: string не является number</span><span class="t-comm lang-en" style="display:none">// ❌ Error: string is not number</span>
+
+<span class="t-comm lang-uk">// Альтернативний синтаксис типу масиву:</span><span class="t-comm lang-ru" style="display:none">// Альтернативный синтаксис типа массива:</span><span class="t-comm lang-en" style="display:none">// Alternative array type syntax:</span>
+<span class="t-kw">const</span> <span class="t-var">names</span>: Array&lt;<span class="t-attr">string</span>&gt; = [<span class="t-str lang-uk">"Іван"</span><span class="t-str lang-ru" style="display:none">"Иван"</span><span class="t-str lang-en" style="display:none">"Ivan"</span>];
+
+<span class="t-comm lang-uk">// Масив об'єктів — TS перевірить поля!</span><span class="t-comm lang-ru" style="display:none">// Массив объектов — TS проверит поля!</span><span class="t-comm lang-en" style="display:none">// Array of objects — TS checks fields!</span>
+<span class="t-kw">const</span> <span class="t-var">users</span>: { <span class="t-attr">name</span>: <span class="t-attr">string</span>; <span class="t-attr">age</span>: <span class="t-attr">number</span> }[] = [
+  { <span class="t-attr">name</span>: <span class="t-str lang-uk">"Маша"</span><span class="t-str lang-ru" style="display:none">"Маша"</span><span class="t-str lang-en" style="display:none">"Masha"</span>, <span class="t-attr">age</span>: <span class="t-num">25</span> }
+];</code></pre>
+        </div>
+      </div>
+    </div>
+
+    <h3 data-i18n="h3.diff_table">Таблиця ключових відмінностей</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th data-i18n="th.feature">Властивість</th>
+            <th>JavaScript</th>
+            <th>TypeScript</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-i18n="td.typing">Типізація</td>
+            <td data-i18n="td.typing_js">Динамічна — тип визначається під час виконання</td>
+            <td data-i18n="td.typing_ts">Статична — тип перевіряється під час компіляції</td>
+          </tr>
+          <tr>
+            <td data-i18n="td.errors">Помилки</td>
+            <td data-i18n="td.errors_js">Виявляються лише під час виконання</td>
+            <td data-i18n="td.errors_ts">Виявляються під час написання коду (IDE)</td>
+          </tr>
+          <tr>
+            <td data-i18n="td.browser">Браузер</td>
+            <td data-i18n="td.browser_js">Запускається напряму</td>
+            <td data-i18n="td.browser_ts">Потрібна компіляція → JS</td>
+          </tr>
+          <tr>
+            <td data-i18n="td.arrays_td">Масиви</td>
+            <td data-i18n="td.arrays_js_td">Можуть містити будь-які типи без обмежень</td>
+            <td data-i18n="td.arrays_ts_td">Тип елементів фіксується: <code>number[]</code>, <code>string[]</code></td>
+          </tr>
+          <tr>
+            <td data-i18n="td.learning">Складність</td>
+            <td data-i18n="td.learning_js">Простіший старт, менше правил</td>
+            <td data-i18n="td.learning_ts">Більше правил, але безпечніше у великих проектах</td>
+          </tr>
+          <tr>
+            <td data-i18n="td.use_case">Коли обирати</td>
+            <td data-i18n="td.use_case_js">Малі проекти, навчання, скрипти</td>
+            <td data-i18n="td.use_case_ts">Командна розробка, великі проекти, бібліотеки</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout result">
+      <span class="icon">🎓</span>
+      <p data-i18n="callout.study_path"><strong data-i18n="callout.study_path_title">Рекомендований шлях навчання:</strong> <span data-i18n="callout.study_path_desc">Спочатку добре вивчи JavaScript — синтаксис, масиви, функції, асинхронність. Потім TypeScript ляже природно поверх цих знань. Не намагайся вивчати TS з нуля, минаючи JS!</span></p>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
   <!-- ===== 1. ПЕРЕМЕННЫЕ ===== -->
   <section class="doc-section" id="basics">
     <h2><span class="step-number">1</span> <span data-i18n="h2.basics">Змінні та типи даних</span></h2>
@@ -135,7 +445,87 @@
 
     <div class="callout info"><span class="icon">💡</span><p data-i18n="callout.beginner_rule"><strong>Правило початківця:</strong> використовуй <code>const</code> за замовчуванням. Якщо значення потрібно змінювати — використовуй <code>let</code>. Забудь про <code>var</code> — це застарілий спосіб.</p></div>
 
+    <h3 data-i18n="h3.why_variables">Навіщо взагалі потрібні змінні?</h3>
+    <p data-i18n="p.why_variables">Уяви, що ти пишеш програму, яка рахує суму кошика в магазині. Без змінних довелося б щоразу вписувати числа вручну. Змінна — це іменована «коробка» в пам'яті, де можна зберегти значення і звертатися до нього за ім'ям скільки завгодно разів.</p>
+
+    <h3 data-i18n="h3.const_let_var_diff">const, let, var — детально</h3>
+    <div class="concept-grid">
+      <div class="concept-card">
+        <div class="cc-tag">const</div>
+        <div class="cc-title" data-i18n="concept.const_title">Незмінне посилання</div>
+        <div class="cc-desc" data-i18n="concept.const_desc">Значення не можна перепризначити після оголошення. Ідеально для констант, конфігурацій, об'єктів та масивів — використовуй за замовчуванням.</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-tag">let</div>
+        <div class="cc-title" data-i18n="concept.let_title">Змінюване значення</div>
+        <div class="cc-desc" data-i18n="concept.let_desc">Значення можна перепризначити. Використовуй лише якщо значення дійсно буде змінюватись: лічильники, результати умов, акумулятори.</div>
+      </div>
+      <div class="concept-card">
+        <div class="cc-tag">var</div>
+        <div class="cc-title" data-i18n="concept.var_title">Застарілий спосіб</div>
+        <div class="cc-desc" data-i18n="concept.var_desc">Має непередбачувану поведінку через «спливання» (hoisting) і функціональну область видимості. У сучасному коді не використовується.</div>
+      </div>
+    </div>
+
     <div class="code-block">
+      <div class="code-header"><span class="code-lang js" data-i18n="clh.const_let_detail">const та let — детальне порівняння</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
+      <pre><code><span class="t-comm lang-uk">// ── const ─────────────────────────────────────────</span><span class="t-comm lang-ru" style="display:none">// ── const ─────────────────────────────────────────</span><span class="t-comm lang-en" style="display:none">// ── const ─────────────────────────────────────────</span>
+<span class="t-kw">const</span> <span class="t-var">PI</span> = <span class="t-num">3.14159</span>;
+<span class="t-comm lang-uk">// PI = 3; ← ❌ TypeError: Assignment to constant variable</span><span class="t-comm lang-ru" style="display:none">// PI = 3; ← ❌ TypeError: Assignment to constant variable</span><span class="t-comm lang-en" style="display:none">// PI = 3; ← ❌ TypeError: Assignment to constant variable</span>
+
+<span class="t-comm lang-uk">// const + об'єкт: сам об'єкт перепризначити не можна,</span><span class="t-comm lang-ru" style="display:none">// const + объект: сам объект переназначить нельзя,</span><span class="t-comm lang-en" style="display:none">// const + object: the object itself can't be reassigned,</span>
+<span class="t-comm lang-uk">// але його властивості — можна!</span><span class="t-comm lang-ru" style="display:none">// но его свойства — можно!</span><span class="t-comm lang-en" style="display:none">// but its properties — can be changed!</span>
+<span class="t-kw">const</span> <span class="t-var">config</span> = { <span class="t-attr">theme</span>: <span class="t-str">"dark"</span>, <span class="t-attr">lang</span>: <span class="t-str">"uk"</span> };
+<span class="t-var">config</span>.<span class="t-attr">theme</span> = <span class="t-str">"light"</span>; <span class="t-comm lang-uk">// ✅ ОК — змінюємо властивість</span><span class="t-comm lang-ru" style="display:none">// ✅ ОК — меняем свойство</span><span class="t-comm lang-en" style="display:none">// ✅ OK — changing a property</span>
+<span class="t-comm lang-uk">// config = {}; ← ❌ НЕ можна замінити сам об'єкт</span><span class="t-comm lang-ru" style="display:none">// config = {}; ← ❌ НЕЛЬЗЯ заменить сам объект</span><span class="t-comm lang-en" style="display:none">// config = {}; ← ❌ CANNOT replace the object itself</span>
+
+<span class="t-comm lang-uk">// ── let ───────────────────────────────────────────</span><span class="t-comm lang-ru" style="display:none">// ── let ───────────────────────────────────────────</span><span class="t-comm lang-en" style="display:none">// ── let ───────────────────────────────────────────</span>
+<span class="t-kw">let</span> <span class="t-var">counter</span> = <span class="t-num">0</span>;
+<span class="t-var">counter</span> = <span class="t-var">counter</span> + <span class="t-num">1</span>; <span class="t-comm lang-uk">// ✅ ОК</span><span class="t-comm lang-ru" style="display:none">// ✅ ОК</span><span class="t-comm lang-en" style="display:none">// ✅ OK</span>
+<span class="t-var">counter</span>++;            <span class="t-comm lang-uk">// ✅ теж саме</span><span class="t-comm lang-ru" style="display:none">// ✅ то же самое</span><span class="t-comm lang-en" style="display:none">// ✅ same thing</span>
+
+<span class="t-kw">let</span> <span class="t-var">isLoggedIn</span> = <span class="t-kw">false</span>;
+<span class="t-kw">if</span> (<span class="t-var">userEnteredPassword</span>) {
+  <span class="t-var">isLoggedIn</span> = <span class="t-kw">true</span>; <span class="t-comm lang-uk">// ← тут let доречний</span><span class="t-comm lang-ru" style="display:none">// ← тут let уместен</span><span class="t-comm lang-en" style="display:none">// ← let is appropriate here</span>
+}
+
+<span class="t-comm lang-uk">// ── var (не використовуй!) ────────────────────────</span><span class="t-comm lang-ru" style="display:none">// ── var (не используй!) ──────────────────────────</span><span class="t-comm lang-en" style="display:none">// ── var (don't use!) ─────────────────────────────</span>
+<span class="t-kw">var</span> <span class="t-var">x</span> = <span class="t-num">1</span>;
+<span class="t-kw">var</span> <span class="t-var">x</span> = <span class="t-num">2</span>; <span class="t-comm lang-uk">// ← var дозволяє повторне оголошення — джерело багів!</span><span class="t-comm lang-ru" style="display:none">// ← var разрешает повторное объявление — источник багов!</span><span class="t-comm lang-en" style="display:none">// ← var allows redeclaration — a source of bugs!</span>
+
+<span class="t-comm lang-uk">// var «спливає» вгору (hoisting) — небезпечно:</span><span class="t-comm lang-ru" style="display:none">// var «всплывает» вверх (hoisting) — опасно:</span><span class="t-comm lang-en" style="display:none">// var is hoisted to the top — dangerous:</span>
+console.<span class="t-fn">log</span>(<span class="t-var">y</span>); <span class="t-comm lang-uk">// undefined (не помилка!) — через hoisting</span><span class="t-comm lang-ru" style="display:none">// undefined (не ошибка!) — из-за hoisting</span><span class="t-comm lang-en" style="display:none">// undefined (not an error!) — due to hoisting</span>
+<span class="t-kw">var</span> <span class="t-var">y</span> = <span class="t-num">5</span>;</code></pre>
+    </div>
+
+    <h3 data-i18n="h3.scope">Область видимості (Scope)</h3>
+    <p data-i18n="p.scope_intro">Scope — це «зона», у якій змінна існує та є доступною. Розуміння scope рятує від багатьох помилок.</p>
+    <div class="code-block">
+      <div class="code-header"><span class="code-lang js" data-i18n="clh.scope_demo">Block scope vs Function scope</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
+      <pre><code><span class="t-comm lang-uk">// let і const — блочна область видимості ({})</span><span class="t-comm lang-ru" style="display:none">// let и const — блочная область видимости ({})</span><span class="t-comm lang-en" style="display:none">// let and const — block scope ({})</span>
+{
+  <span class="t-kw">let</span> <span class="t-var">blockVar</span> = <span class="t-str">"inside"</span>;
+  console.<span class="t-fn">log</span>(<span class="t-var">blockVar</span>); <span class="t-comm lang-uk">// ✅ "inside"</span><span class="t-comm lang-ru" style="display:none">// ✅ "inside"</span><span class="t-comm lang-en" style="display:none">// ✅ "inside"</span>
+}
+<span class="t-comm lang-uk">// console.log(blockVar); ← ❌ ReferenceError: не існує тут</span><span class="t-comm lang-ru" style="display:none">// console.log(blockVar); ← ❌ ReferenceError: не существует здесь</span><span class="t-comm lang-en" style="display:none">// console.log(blockVar); ← ❌ ReferenceError: doesn't exist here</span>
+
+<span class="t-comm lang-uk">// var — функціональна область видимості (ігнорує блоки)</span><span class="t-comm lang-ru" style="display:none">// var — функциональная область видимости (игнорирует блоки)</span><span class="t-comm lang-en" style="display:none">// var — function scope (ignores blocks)</span>
+{
+  <span class="t-kw">var</span> <span class="t-var">funcVar</span> = <span class="t-str">"leaks out"</span>;
+}
+console.<span class="t-fn">log</span>(<span class="t-var">funcVar</span>); <span class="t-comm lang-uk">// ✅ "leaks out" — var «протікає»!</span><span class="t-comm lang-ru" style="display:none">// ✅ "leaks out" — var «утекает»!</span><span class="t-comm lang-en" style="display:none">// ✅ "leaks out" — var "leaks"!</span>
+
+<span class="t-comm lang-uk">// Типова пастка з var у циклі:</span><span class="t-comm lang-ru" style="display:none">// Типичная ловушка с var в цикле:</span><span class="t-comm lang-en" style="display:none">// Classic var trap in a loop:</span>
+<span class="t-kw">for</span> (<span class="t-kw">var</span> <span class="t-var">i</span> = <span class="t-num">0</span>; <span class="t-var">i</span> < <span class="t-num">3</span>; <span class="t-var">i</span>++) {
+  setTimeout(() => console.<span class="t-fn">log</span>(<span class="t-var">i</span>), <span class="t-num">100</span>);
+}
+<span class="t-comm lang-uk">// → 3, 3, 3  (не 0, 1, 2!) — усі callback'и бачать одну var i</span><span class="t-comm lang-ru" style="display:none">// → 3, 3, 3  (не 0, 1, 2!) — все callback'и видят одну var i</span><span class="t-comm lang-en" style="display:none">// → 3, 3, 3  (not 0, 1, 2!) — all callbacks share the same var i</span>
+
+<span class="t-kw">for</span> (<span class="t-kw">let</span> <span class="t-var">i</span> = <span class="t-num">0</span>; <span class="t-var">i</span> < <span class="t-num">3</span>; <span class="t-var">i</span>++) {
+  setTimeout(() => console.<span class="t-fn">log</span>(<span class="t-var">i</span>), <span class="t-num">100</span>);
+}
+<span class="t-comm lang-uk">// → 0, 1, 2  ✅ let створює нову змінну для кожної ітерації</span><span class="t-comm lang-ru" style="display:none">// → 0, 1, 2  ✅ let создаёт новую переменную для каждой итерации</span><span class="t-comm lang-en" style="display:none">// → 0, 1, 2  ✅ let creates a new variable for each iteration</span></code></pre>
+    </div>
       <div class="code-header"><span class="code-lang js">JavaScript</span><button class="copy-btn" onclick="copyCode(this)" data-i18n-copy>Копіювати</button></div>
       <pre><code><span class="t-comm lang-uk">// const — значення не можна перепризначити</span><span class="t-comm lang-ru" style="display:none">// const — значение нельзя переназначить</span><span class="t-comm lang-en" style="display:none">// const — value cannot be reassigned</span>
 <span class="t-kw">const</span> <span class="t-var">name</span> = <span class="t-str lang-uk">"Олексій"</span><span class="t-str lang-ru" style="display:none">"Алексей"</span><span class="t-str lang-en" style="display:none">"Alexey"</span>;
@@ -2073,6 +2463,122 @@ const TRANSLATIONS = {
   },
   'footer.copy':  { uk:`JavaScript &amp; TypeScript — Повний курс для початківців · 2024`, ru:`JavaScript &amp; TypeScript — Полный курс для новичков · 2024`, en:`JavaScript &amp; TypeScript — Complete Beginner's Course · 2024` },
   'footer.stats': { uk:`20 розділів · 100+ прикладів`, ru:`20 разделов · 100+ примеров`, en:`20 sections · 100+ examples` },
+
+  // ── NEW INTRO SECTIONS ────────────────────────────────
+  'toc.what_is_js': { uk:`Що таке JavaScript?`, ru:`Что такое JavaScript?`, en:`What is JavaScript?` },
+  'toc.what_is_ts': { uk:`Що таке TypeScript?`, ru:`Что такое TypeScript?`, en:`What is TypeScript?` },
+  'toc.js_vs_ts':   { uk:`JS vs TS — порівняння та спільне`, ru:`JS vs TS — сравнение и общее`, en:`JS vs TS — comparison & common ground` },
+
+  'sb.intro_group': { uk:`Вступ`, ru:`Вступление`, en:`Introduction` },
+  'sb.what_is_js':  { uk:`Що таке JavaScript?`, ru:`Что такое JavaScript?`, en:`What is JavaScript?` },
+  'sb.what_is_ts':  { uk:`Що таке TypeScript?`, ru:`Что такое TypeScript?`, en:`What is TypeScript?` },
+  'sb.js_vs_ts':    { uk:`JS vs TS`, ru:`JS vs TS`, en:`JS vs TS` },
+
+  'h2.what_is_js':  { uk:`Що таке JavaScript?`, ru:`Что такое JavaScript?`, en:`What is JavaScript?` },
+  'h2.what_is_ts':  { uk:`Що таке TypeScript?`, ru:`Что такое TypeScript?`, en:`What is TypeScript?` },
+  'h2.js_vs_ts':    { uk:`JS vs TS — спільне та відмінності`, ru:`JS vs TS — общее и различия`, en:`JS vs TS — common ground & differences` },
+
+  'intro.what_is_js':    { uk:`JavaScript — це мова програмування, яка «оживляє» вебсторінки. Саме JS відповідає за кнопки, анімації, форми, запити до серверів — усе динамічне у браузері.`, ru:`JavaScript — это язык программирования, который «оживляет» веб-страницы. Именно JS отвечает за кнопки, анимации, формы, запросы к серверам — всё динамическое в браузере.`, en:`JavaScript is a programming language that "brings web pages to life." JS is responsible for buttons, animations, forms, server requests — everything dynamic in the browser.` },
+  'intro.what_is_ts_intro': { uk:`TypeScript — це JavaScript із «надбудовою» у вигляді системи типів. Його створила Microsoft у 2012 році, щоб зробити великі JS-проекти надійнішими та зручнішими для роботи в команді.`, ru:`TypeScript — это JavaScript с «надстройкой» в виде системы типов. Его создала Microsoft в 2012 году, чтобы сделать большие JS-проекты надёжнее и удобнее для командной работы.`, en:`TypeScript is JavaScript with a "superstructure" — a type system. Created by Microsoft in 2012 to make large JS projects more reliable and easier to work on as a team.` },
+  'intro.js_vs_ts':      { uk:`Розуміння різниці між JavaScript та TypeScript — ключ до правильного вибору інструменту. Розберемо спільне, відмінності, і як вони взаємодіють на прикладі масивів.`, ru:`Понимание разницы между JavaScript и TypeScript — ключ к правильному выбору инструмента. Разберём общее, различия, и как они взаимодействуют на примере массивов.`, en:`Understanding the difference between JavaScript and TypeScript is key to picking the right tool. Let's cover the common ground, differences, and how they interact using arrays as examples.` },
+
+  'jscard.web':           { uk:`Мова вебу`, ru:`Язык веба`, en:`Language of the web` },
+  'jscard.web_desc':      { uk:`Єдина мова, яку «розуміє» браузер нативно. Без плагінів і компіляції — просто файл .js.`, ru:`Единственный язык, который браузер понимает нативно. Без плагинов и компиляции — просто файл .js.`, en:`The only language browsers understand natively. No plugins or compilation — just a .js file.` },
+  'jscard.dynamic':       { uk:`Динамічна типізація`, ru:`Динамическая типизация`, en:`Dynamic typing` },
+  'jscard.dynamic_desc':  { uk:`Змінна не має фіксованого типу — одна і та ж змінна може спочатку бути числом, потім рядком.`, ru:`Переменная не имеет фиксированного типа — одна и та же переменная может сначала быть числом, потом строкой.`, en:`A variable has no fixed type — the same variable can start as a number and then become a string.` },
+  'jscard.everywhere':    { uk:`Скрізь`, ru:`Везде`, en:`Everywhere` },
+  'jscard.everywhere_desc': { uk:`Фронтенд (браузер), бекенд (Node.js), мобільні застосунки (React Native), десктоп (Electron).`, ru:`Фронтенд (браузер), бэкенд (Node.js), мобильные приложения (React Native), десктоп (Electron).`, en:`Frontend (browser), backend (Node.js), mobile apps (React Native), desktop (Electron).` },
+  'jscard.history':       { uk:`Створено у 1995`, ru:`Создан в 1995`, en:`Created in 1995` },
+  'jscard.history_desc':  { uk:`Брендан Айк написав перший прототип за 10 днів. Сьогодні JS — найпопулярніша мова у світі за даними GitHub.`, ru:`Брендан Айк написал первый прототип за 10 дней. Сегодня JS — самый популярный язык в мире по данным GitHub.`, en:`Brendan Eich wrote the first prototype in 10 days. Today JS is the most popular language in the world according to GitHub.` },
+
+  'callout.js_metaphor':  { uk:`<strong>Аналогія:</strong> якщо HTML — це кістяк сторінки, CSS — її зовнішній вигляд, то JavaScript — це м'язи, які дозволяють їй рухатися та реагувати на дії користувача.`, ru:`<strong>Аналогия:</strong> если HTML — это скелет страницы, CSS — её внешний вид, то JavaScript — это мышцы, которые позволяют ей двигаться и реагировать на действия пользователя.`, en:`<strong>Analogy:</strong> if HTML is the skeleton of the page and CSS is its appearance, then JavaScript is the muscles that make it move and react to user actions.` },
+
+  'h3.js_where_runs':     { uk:`Де виконується JavaScript?`, ru:`Где выполняется JavaScript?`, en:`Where does JavaScript run?` },
+  'compare.browser':      { uk:`🌐 У браузері`, ru:`🌐 В браузере`, en:`🌐 In the browser` },
+  'compare.nodejs':       { uk:`🖥️ На сервері (Node.js)`, ru:`🖥️ На сервере (Node.js)`, en:`🖥️ On a server (Node.js)` },
+
+  'h3.js_how_works':      { uk:`Як працює JS у браузері?`, ru:`Как работает JS в браузере?`, en:`How does JS work in the browser?` },
+  'step.js1': { uk:`Браузер завантажує HTML і знаходить тег <code>&lt;script&gt;</code> або підключений файл <code>.js</code>.`, ru:`Браузер загружает HTML и находит тег <code>&lt;script&gt;</code> или подключённый файл <code>.js</code>.`, en:`The browser loads HTML and finds a <code>&lt;script&gt;</code> tag or linked <code>.js</code> file.` },
+  'step.js2': { uk:`JS-рушій (V8 у Chrome, SpiderMonkey у Firefox) читає і виконує код рядок за рядком.`, ru:`JS-движок (V8 в Chrome, SpiderMonkey в Firefox) читает и выполняет код строка за строкой.`, en:`The JS engine (V8 in Chrome, SpiderMonkey in Firefox) reads and runs code line by line.` },
+  'step.js3': { uk:`Код може звертатися до DOM (структури сторінки) і змінювати її в реальному часі.`, ru:`Код может обращаться к DOM (структуре страницы) и изменять её в реальном времени.`, en:`Code can access the DOM (page structure) and modify it in real time.` },
+  'step.js4': { uk:`Асинхронні операції (запити, таймери) виконуються у фоні, не блокуючи інтерфейс.`, ru:`Асинхронные операции (запросы, таймеры) выполняются в фоне, не блокируя интерфейс.`, en:`Async operations (requests, timers) run in the background without blocking the interface.` },
+
+  'callout.ts_key_idea':  { uk:`<strong>Головна ідея:</strong> TypeScript — це <em>надмножина</em> JavaScript. Будь-який валідний JS-код є також валідним TS-кодом. Але TS дозволяє <em>додатково</em> вказувати типи для змінних, параметрів функцій та повернених значень.`, ru:`<strong>Главная идея:</strong> TypeScript — это <em>надмножество</em> JavaScript. Любой валидный JS-код является также валидным TS-кодом. Но TS позволяет <em>дополнительно</em> указывать типы для переменных, параметров функций и возвращаемых значений.`, en:`<strong>Key idea:</strong> TypeScript is a <em>superset</em> of JavaScript. Any valid JS code is also valid TS code. But TS lets you <em>additionally</em> specify types for variables, function parameters and return values.` },
+
+  'tscard.safety':           { uk:`Безпека типів`, ru:`Безопасность типов`, en:`Type safety` },
+  'tscard.safety_desc':      { uk:`TS ловить помилки ще до запуску коду — прямо під час написання в редакторі.`, ru:`TS ловит ошибки ещё до запуска кода — прямо во время написания в редакторе.`, en:`TS catches errors before code runs — right while you type in the editor.` },
+  'tscard.intellisense':     { uk:`Розумне автодоповнення`, ru:`Умное автодополнение`, en:`Smart autocompletion` },
+  'tscard.intellisense_desc':{ uk:`IDE «знає» які поля є у об'єкта і які методи можна викликати — підказки стають точнішими.`, ru:`IDE «знает» какие поля есть у объекта и какие методы можно вызывать — подсказки становятся точнее.`, en:`The IDE "knows" what fields an object has and which methods can be called — hints become much more precise.` },
+  'tscard.docs':             { uk:`Типи як документація`, ru:`Типы как документация`, en:`Types as documentation` },
+  'tscard.docs_desc':        { uk:`Сигнатура функції <code>greet(name: string): string</code> одразу показує що приймає і повертає.`, ru:`Сигнатура функции <code>greet(name: string): string</code> сразу показывает что принимает и возвращает.`, en:`A function signature like <code>greet(name: string): string</code> immediately shows what it takes and returns.` },
+  'tscard.compiles':         { uk:`Компілюється в JS`, ru:`Компилируется в JS`, en:`Compiles to JS` },
+  'tscard.compiles_desc':    { uk:`Браузер не розуміє TS — тому він компілюється у звичайний JS за допомогою команди <code>tsc</code>.`, ru:`Браузер не понимает TS — поэтому он компилируется в обычный JS с помощью команды <code>tsc</code>.`, en:`Browsers don't understand TS — so it compiles to plain JS using the <code>tsc</code> command.` },
+
+  'h3.ts_vs_js_code':        { uk:`JS vs TS — один і той же код`, ru:`JS vs TS — один и тот же код`, en:`JS vs TS — the same code` },
+  'callout.ts_when':         { uk:``, ru:``, en:`` },
+  'callout.ts_when_title':   { uk:`Коли вибирати TS?`, ru:`Когда выбирать TS?`, en:`When to choose TS?` },
+  'callout.ts_when_desc':    { uk:`Для маленьких скриптів достатньо JS. TypeScript особливо корисний у великих проектах, командній розробці або бібліотеках — скрізь, де важлива надійність і авто-документація коду.`, ru:`Для маленьких скриптов достаточно JS. TypeScript особенно полезен в больших проектах, командной разработке или библиотеках — везде, где важна надёжность и авто-документация кода.`, en:`For small scripts, JS is enough. TypeScript is especially useful in large projects, team development, or libraries — anywhere reliability and auto-documentation matter.` },
+
+  'h3.common_ground':        { uk:`Спільне між JS та TS`, ru:`Общее между JS и TS`, en:`What JS and TS have in common` },
+  'tag.syntax':              { uk:`Синтаксис`, ru:`Синтаксис`, en:`Syntax` },
+  'tag.runtime':             { uk:`Runtime`, ru:`Runtime`, en:`Runtime` },
+  'tag.ecosystem':           { uk:`Екосистема`, ru:`Экосистема`, en:`Ecosystem` },
+  'tag.methods':             { uk:`Методи`, ru:`Методы`, en:`Methods` },
+  'concept.same_syntax':     { uk:`Однаковий синтаксис`, ru:`Одинаковый синтаксис`, en:`Same syntax` },
+  'concept.same_syntax_desc':{ uk:`Цикли, умови, функції, класи, async/await — все виглядає однаково. Вивчивши JS, TS не злякає.`, ru:`Циклы, условия, функции, классы, async/await — всё выглядит одинаково. Изучив JS, TS не испугает.`, en:`Loops, conditions, functions, classes, async/await — all look the same. Once you know JS, TS won't scare you.` },
+  'concept.same_runtime':    { uk:`Один і той же рушій`, ru:`Один и тот же движок`, en:`Same runtime engine` },
+  'concept.same_runtime_desc':{ uk:`TS компілюється у JS і запускається тим самим рушієм (V8, Node.js). У production — тільки JS.`, ru:`TS компилируется в JS и запускается тем же движком (V8, Node.js). В production — только JS.`, en:`TS compiles to JS and runs on the same engine (V8, Node.js). In production — only JS runs.` },
+  'concept.same_eco':        { uk:`Спільна екосистема`, ru:`Общая экосистема`, en:`Shared ecosystem` },
+  'concept.same_eco_desc':   { uk:`npm-пакети, React, Node.js, Vite — все це доступно і в JS, і в TS. Бібліотеки одні й ті самі.`, ru:`npm-пакеты, React, Node.js, Vite — всё это доступно и в JS, и в TS. Библиотеки одни и те же.`, en:`npm packages, React, Node.js, Vite — all available in both JS and TS. The libraries are the same.` },
+  'concept.same_methods':    { uk:`Ті самі методи масивів і об'єктів`, ru:`Те же методы массивов и объектов`, en:`Same array & object methods` },
+  'concept.same_methods_desc':{ uk:`<code>map</code>, <code>filter</code>, <code>reduce</code>, <code>forEach</code> — всі JS-методи доступні в TS без змін.`, ru:`<code>map</code>, <code>filter</code>, <code>reduce</code>, <code>forEach</code> — все JS-методы доступны в TS без изменений.`, en:`<code>map</code>, <code>filter</code>, <code>reduce</code>, <code>forEach</code> — all JS methods available in TS unchanged.` },
+
+  'h3.arrays_compare':       { uk:`Масиви: JS vs TS — схожість і відмінності`, ru:`Массивы: JS vs TS — сходство и различия`, en:`Arrays: JS vs TS — similarities & differences` },
+  'callout.arrays_theory':   { uk:``, ru:``, en:`` },
+  'callout.arrays_theory_title': { uk:`Що таке масив?`, ru:`Что такое массив?`, en:`What is an array?` },
+  'callout.arrays_theory_desc':  { uk:`Масив — це впорядкований список значень, де кожен елемент має числовий індекс, починаючи з 0. Це як пронумерована полиця: полиця 0 — перша книга, полиця 1 — друга, і так далі.`, ru:`Массив — это упорядоченный список значений, где каждый элемент имеет числовой индекс, начиная с 0. Это как пронумерованная полка: полка 0 — первая книга, полка 1 — вторая, и так далее.`, en:`An array is an ordered list of values where each element has a numeric index starting from 0. Think of it as a numbered shelf: shelf 0 is the first book, shelf 1 is the second, and so on.` },
+  'compare.js_arrays':       { uk:`JS Масиви — гнучкі, але ризиковані`, ru:`JS Массивы — гибкие, но рискованные`, en:`JS Arrays — flexible but risky` },
+  'compare.ts_arrays':       { uk:`TS Масиви — типізовані та безпечні`, ru:`TS Массивы — типизированные и безопасные`, en:`TS Arrays — typed and safe` },
+
+  'h3.diff_table':           { uk:`Таблиця ключових відмінностей`, ru:`Таблица ключевых отличий`, en:`Key differences table` },
+  'th.feature':              { uk:`Властивість`, ru:`Свойство`, en:`Feature` },
+  'td.typing':               { uk:`Типізація`, ru:`Типизация`, en:`Typing` },
+  'td.typing_js':            { uk:`Динамічна — тип визначається під час виконання`, ru:`Динамическая — тип определяется во время выполнения`, en:`Dynamic — type determined at runtime` },
+  'td.typing_ts':            { uk:`Статична — тип перевіряється під час компіляції`, ru:`Статическая — тип проверяется при компиляции`, en:`Static — type checked at compile time` },
+  'td.errors':               { uk:`Помилки`, ru:`Ошибки`, en:`Errors` },
+  'td.errors_js':            { uk:`Виявляються лише під час виконання`, ru:`Обнаруживаются только во время выполнения`, en:`Discovered only at runtime` },
+  'td.errors_ts':            { uk:`Виявляються під час написання коду (IDE)`, ru:`Обнаруживаются во время написания кода (IDE)`, en:`Discovered while writing code (IDE)` },
+  'td.browser':              { uk:`Браузер`, ru:`Браузер`, en:`Browser` },
+  'td.browser_js':           { uk:`Запускається напряму`, ru:`Запускается напрямую`, en:`Runs directly` },
+  'td.browser_ts':           { uk:`Потрібна компіляція → JS`, ru:`Нужна компиляция → JS`, en:`Needs compilation → JS` },
+  'td.arrays_td':            { uk:`Масиви`, ru:`Массивы`, en:`Arrays` },
+  'td.arrays_js_td':         { uk:`Можуть містити будь-які типи без обмежень`, ru:`Могут содержать любые типы без ограничений`, en:`Can hold any types without restrictions` },
+  'td.arrays_ts_td':         { uk:`Тип елементів фіксується: <code>number[]</code>, <code>string[]</code>`, ru:`Тип элементов фиксируется: <code>number[]</code>, <code>string[]</code>`, en:`Element type is fixed: <code>number[]</code>, <code>string[]</code>` },
+  'td.learning':             { uk:`Складність`, ru:`Сложность`, en:`Learning curve` },
+  'td.learning_js':          { uk:`Простіший старт, менше правил`, ru:`Более простой старт, меньше правил`, en:`Easier start, fewer rules` },
+  'td.learning_ts':          { uk:`Більше правил, але безпечніше у великих проектах`, ru:`Больше правил, но безопаснее в больших проектах`, en:`More rules, but safer in large projects` },
+  'td.use_case':             { uk:`Коли обирати`, ru:`Когда выбирать`, en:`When to choose` },
+  'td.use_case_js':          { uk:`Малі проекти, навчання, скрипти`, ru:`Маленькие проекты, обучение, скрипты`, en:`Small projects, learning, scripts` },
+  'td.use_case_ts':          { uk:`Командна розробка, великі проекти, бібліотеки`, ru:`Командная разработка, большие проекты, библиотеки`, en:`Team development, large projects, libraries` },
+
+  'callout.study_path':      { uk:``, ru:``, en:`` },
+  'callout.study_path_title':{ uk:`Рекомендований шлях навчання:`, ru:`Рекомендуемый путь обучения:`, en:`Recommended learning path:` },
+  'callout.study_path_desc': { uk:`Спочатку добре вивчи JavaScript — синтаксис, масиви, функції, асинхронність. Потім TypeScript ляже природно поверх цих знань. Не намагайся вивчати TS з нуля, минаючи JS!`, ru:`Сначала хорошо изучи JavaScript — синтаксис, массивы, функции, асинхронность. Потом TypeScript ляжет естественно поверх этих знаний. Не пытайся учить TS с нуля, минуя JS!`, en:`First learn JavaScript well — syntax, arrays, functions, async. Then TypeScript will naturally build on top of that knowledge. Don't try to learn TS from scratch, skipping JS!` },
+
+  // ── NEW BASICS THEORY KEYS ────────────────────────────
+  'h3.why_variables':        { uk:`Навіщо взагалі потрібні змінні?`, ru:`Зачем вообще нужны переменные?`, en:`Why do we need variables at all?` },
+  'p.why_variables':         { uk:`Уяви, що ти пишеш програму, яка рахує суму кошика в магазині. Без змінних довелося б щоразу вписувати числа вручну. Змінна — це іменована «коробка» в пам'яті, де можна зберегти значення і звертатися до нього за ім'ям скільки завгодно разів.`, ru:`Представь, что ты пишешь программу, которая считает сумму корзины в магазине. Без переменных пришлось бы каждый раз вписывать числа вручную. Переменная — это именованная «коробка» в памяти, где можно сохранить значение и обращаться к нему по имени сколько угодно раз.`, en:`Imagine you are writing a program that calculates a shopping cart total. Without variables, you would have to enter numbers manually every time. A variable is a named "box" in memory where you can store a value and refer to it by name as many times as you want.` },
+  'h3.const_let_var_diff':   { uk:`const, let, var — детально`, ru:`const, let, var — подробно`, en:`const, let, var — in detail` },
+  'concept.const_title':     { uk:`Незмінне посилання`, ru:`Неизменяемая ссылка`, en:`Immutable reference` },
+  'concept.const_desc':      { uk:`Значення не можна перепризначити після оголошення. Ідеально для констант, конфігурацій, об'єктів та масивів — використовуй за замовчуванням.`, ru:`Значение нельзя переназначить после объявления. Идеально для констант, конфигураций, объектов и массивов — используй по умолчанию.`, en:`Value cannot be reassigned after declaration. Ideal for constants, configs, objects, and arrays — use it by default.` },
+  'concept.let_title':       { uk:`Змінюване значення`, ru:`Изменяемое значение`, en:`Mutable value` },
+  'concept.let_desc':        { uk:`Значення можна перепризначити. Використовуй лише якщо значення дійсно буде змінюватись: лічильники, результати умов, акумулятори.`, ru:`Значение можно переназначить. Используй только если значение действительно будет меняться: счётчики, результаты условий, аккумуляторы.`, en:`Value can be reassigned. Use only when the value will genuinely change: counters, condition results, accumulators.` },
+  'concept.var_title':       { uk:`Застарілий спосіб`, ru:`Устаревший способ`, en:`Legacy way` },
+  'concept.var_desc':        { uk:`Має непередбачувану поведінку через «спливання» (hoisting) і функціональну область видимості. У сучасному коді не використовується.`, ru:`Имеет непредсказуемое поведение из-за «всплытия» (hoisting) и функциональной области видимости. В современном коде не используется.`, en:`Has unpredictable behavior due to hoisting and function scope. Not used in modern code.` },
+  'clh.const_let_detail':    { uk:`const та let — детальне порівняння`, ru:`const и let — детальное сравнение`, en:`const and let — detailed comparison` },
+  'h3.scope':                { uk:`Область видимості (Scope)`, ru:`Область видимости (Scope)`, en:`Scope` },
+  'p.scope_intro':           { uk:`Scope — це «зона», у якій змінна існує та є доступною. Розуміння scope рятує від багатьох помилок.`, ru:`Scope — это «зона», в которой переменная существует и доступна. Понимание scope спасает от многих ошибок.`, en:`Scope is the "zone" in which a variable exists and is accessible. Understanding scope saves you from many bugs.` },
+  'clh.scope_demo':          { uk:`Block scope vs Function scope`, ru:`Block scope vs Function scope`, en:`Block scope vs Function scope` },
 
   // ── EXTRA: code-block headers ─────────────────────────
   'clh.typeof':            { uk:`JavaScript — оператор typeof`,                           ru:`JavaScript — оператор typeof`,                        en:`JavaScript — typeof operator`                        },
